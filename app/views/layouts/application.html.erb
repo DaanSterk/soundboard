@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<div class="container-fluid">
+  <div id="nav" class="row">
+    <div class="col-md-1">
+      <%= link_to 'Soundboards', boards_path, { :id => 'btn-soundboards' , :class => 'btn btn-secondary' } %>
+    </div>
+  </div>
+</div>
+
 <%= yield %>
 
 </body>

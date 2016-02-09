@@ -53,4 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'home#index'
+
+  get '/boards' => 'boards#index'
+  get '/boards/:id/' => 'boards#show', as: 'board_show'
 end

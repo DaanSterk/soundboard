@@ -1,0 +1,12 @@
+<div class="container">
+  <table class="table">
+    <tbody>
+    <% @boards.each do |board| %>
+      <tr>
+        <td><h5><%= board.name %></h5></td>
+        <td class="_col-small"><%= link_to 'View board', board_show_path(board.id), { :class => 'btn btn-primary' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
