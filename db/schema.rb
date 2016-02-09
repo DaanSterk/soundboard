@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209171026) do
+ActiveRecord::Schema.define(version: 20160209220302) do
 
   create_table "boards", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "isInEditMode"
   end
 
   create_table "sounds", force: true do |t|
@@ -30,6 +31,11 @@ ActiveRecord::Schema.define(version: 20160209171026) do
     t.datetime "updated_at"
     t.integer  "xPos"
     t.integer  "yPos"
+    t.string   "sound_file_name"
+    t.string   "sound_content_type"
+    t.integer  "sound_file_size"
+    t.datetime "sound_updated_at"
+    t.integer  "board_id"
   end
 
 end

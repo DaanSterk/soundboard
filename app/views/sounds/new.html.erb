@@ -1,0 +1,15 @@
+<%= form_for @sound, :html => { :multipart => true } do |c| %>
+  <div class="field">
+    <%= c.label :name %>:
+    <%= c.text_field :name %><br />
+  </div>
+
+  <div class="field">
+    <%= c.label :sound %>
+    <%= c.file_field :sound %>
+  </div>
+
+  <div class="field">
+    <%= c.submit %>
+  </div>
+<% end %>

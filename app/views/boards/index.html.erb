@@ -1,6 +1,6 @@
 <div class="container">
   <%= link_to 'New soundboard', new_board_path, { :id => 'btn-new-soundboard' ,:class => 'btn btn-success' } %>
-  <table class="table">
+  <table id="boards" class="table">
     <tbody>
     <% @boards.each do |board| %>
       <tr>

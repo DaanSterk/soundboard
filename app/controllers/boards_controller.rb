@@ -5,6 +5,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @sounds = @board.sounds
     @rows = 8 # Should be board table field
   end
 
@@ -39,6 +40,17 @@ class BoardsController < ApplicationController
       flash[:success] = "Board deleted!"
     end
     return redirect_to action: 'index'
+  end
+
+  def toggle
+    @board = Board.find(params[:id])
+    if @board.isInEditMode
+      @board.isInEditMode = false
+    else
+      @board.isInEditMode = true
+    end
+    @board.save
+    return redirect_to action: 'show'
   end
 
   def board_params

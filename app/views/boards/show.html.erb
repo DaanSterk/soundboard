@@ -2,9 +2,21 @@
   <div class="row sound-row">
     <% 12.times do |x| %>
       <div class="col-md-1 sound-col">
-        <div class="sound-space">
+        <% if @board.isInEditMode %>
+            <%= link_to new_sound_path(:board => @board.id, :xPos => x, :yPos => y) do %>
+              <div class="sound-space sound-edit">
 
-        </div>
+              </div>
+            <% end %>
+        <% else %>
+          <div class="sound-space">
+            <% @sounds.each do |sound| %>
+              <% if sound.xPos == x && sound.yPos == y %>
+                <%= sound.name %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

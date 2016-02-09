@@ -7,6 +7,10 @@
   float: right;
 }
 
+#boards td { // Overwrite on table
+  border-top: 1px solid #738ba9;
+}
+
 #board-title {
   margin: 8px 0px;
 
@@ -28,4 +32,14 @@
 .sound-space {
   height: 80px;
   background-color: #4a688d;
+}
+
+.sound-space:hover {
+  background-color: #738ba9;
+
+  cursor: pointer;
+}
+
+.sound-edit:hover {
+  background-color: orangered;
 }
