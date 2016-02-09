@@ -1,10 +1,17 @@
 <div class="container">
+  <%= link_to 'New soundboard', new_board_path, { :id => 'btn-new-soundboard' ,:class => 'btn btn-success' } %>
   <table class="table">
     <tbody>
     <% @boards.each do |board| %>
       <tr>
         <td><h5><%= board.name %></h5></td>
-        <td class="_col-small"><%= link_to 'View board', board_show_path(board.id), { :class => 'btn btn-primary' } %></td>
+        <td class="_col-small">
+          <div class="btn-group">
+            <%= link_to 'View', board_path(board.id), { :class => 'btn btn-primary' } %>
+            <%= link_to 'Edit', edit_board_path(board.id), { :class => 'btn btn-warning' } %>
+            <%= link_to 'Delete', destroy_board_path(board.id), data: { confirm: 'Are you sure you want to delete this board?' }, method: :delete, :class => 'btn btn-danger' %>
+          </div>
+        </td>
       </tr>
     <% end %>
     </tbody>

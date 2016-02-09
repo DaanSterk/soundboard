@@ -55,6 +55,13 @@ Rails.application.routes.draw do
   #   end
   root 'home#index'
 
-  get '/boards' => 'boards#index'
-  get '/boards/:id/' => 'boards#show', as: 'board_show'
+  resources :boards
+
+  get '/boards/' => 'boards#index'
+  get '/boards/new/' => 'boards#new'
+  get '/boards/:id/' => 'boards#show'
+  post '/boards/create/' => 'boards#create'
+  get '/boards/:id/edit/' => 'boards#edit'
+  post '/boards/:id/update' => 'boards#update'
+  delete '/boards/:id/destroy' => 'boards#destroy', as: 'destroy_board'
 end

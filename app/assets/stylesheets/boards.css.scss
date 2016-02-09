@@ -1,3 +1,31 @@
 ._col-small { // To put 'View board' buttons at the end of the table.
-  width: 100px;
+  width: 190px;
+}
+
+#btn-new-soundboard {
+  margin: 5px 0px;
+  float: right;
+}
+
+#board-title {
+  margin: 8px 0px;
+
+  color: #FFF;
+  text-align: center;
+}
+
+.sound-row [class*="-1"] { // Edit spacing between columns
+  margin: 1px 0px;
+  padding: 0px 1px;
+}
+
+.sound-col {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.sound-space {
+  height: 80px;
+  background-color: #4a688d;
 }
