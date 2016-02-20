@@ -17,7 +17,7 @@
       <% if @board != nil %>
         <% if @board.isInEditMode %>
             <%= link_to 'Edit mode', toggle_board_path(@board.id), { :id => 'btn-edit-mode' , :class => 'btn btn-danger' } %>
-        <% else %>
+        <% elsif @board.id != nil %>
             <%= link_to 'Edit mode', toggle_board_path(@board.id), { :id => 'btn-edit-mode' , :class => 'btn btn-success' } %>
         <% end %>
       <% end %>
